@@ -1589,6 +1589,8 @@ professor
 program
 progress
 prohibit
+prop
+protect
 protest
 protest
 public
@@ -1608,3 +1610,186 @@ quiet
 quietly
 quite
 quiz
+rabbit
+racket
+radiation
+rain
+rainwater
+rainy
+raise
+ramen
+ramp
+ran
+rapidly
+reach
+read
+read
+read
+reader
+reading
+ready
+be ready for
+real
+realize
+really
+really
+reason
+receive
+recently
+recognize
+recommend
+recommended
+recorder
+rectangle
+recycle
+red
+reduce
+reflect
+regardless
+regardless of
+region
+regional
+relate
+relationship
+relativity
+relax
+relay
+release
+release
+remember
+remind
+remind ... of
+remove
+renewable
+repeat
+reply
+report
+represent
+research
+researcher
+reservation
+resident
+resource
+respect
+responsible
+rest
+rest
+take a rest
+rest
+restaurant
+restroom
+result
+as a result of
+return
+reusable
+review
+rice
+rice cake
+rice ball
+rich
+ride
+right
+right
+right
+right
+all right
+All right.
+right away
+right
+right-handed
+rise
+river
+road
+rode
+role
+room
+root
+rose
+round
+rugby
+rule
+rule
+ruler
+run
+run
+run
+runner
+sad
+safe
+safely
+said
+said
+salad
+salt
+salty
+same
+sandwich
+Saturday
+sauce
+sausage
+save
+save
+saw
+say
+say
+say to oneself
+scene
+school
+after school
+school festival
+school trip
+science
+scientist
+scissors
+scroll
+sea
+seafood
+sea otter
+season
+sea turtle
+second
+second
+second
+see
+see
+see
+I see.
+See you.
+seem
+seen
+select
+selection
+sell
+send
+sent
+sent
+sentence
+September
+server
+service
+set
+set up
+set
+setter
+seven
+seventeen
+seventeenth
+seventh
+seventy
+several
+severe
+shade
+shadow
+shall I ...?
+shape
+share
+shark
+shaved ice
+she
+sheep
+shelter
+shirt
+shock
+shoe
+shop
+shop
