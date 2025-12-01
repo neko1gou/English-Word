@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!--文字コードを指定-->
+        <meta charset="UTF-8">
+        <!--タイトルを指定-->
+        <title>
+            English word practice
+        </title>
+        <!--CSSの記述-->
+        <style>
+        </style>
+    </head>
+    <body>
+        <div id="run"></div>
+        <!--JavaScriptの記述-->
+        <script>
+            // github raw url を定数として保存
+            const URL_WORD = 'https://raw.githubusercontent.com/neko1gou/English-Word/refs/heads/main/word.txt';
+            const URL_MEAN = 'https://raw.githubusercontent.com/neko1gou/English-Word/refs/heads/main/mean.txt';
+            //divに変更を与えるための定数
+            const DIV_ROAD = document.getElementById('run');
+            //ward、 meanの格納の配列の宣言
+            let word =[];
+            let mean =[];
+            //ファイルの読み込みが終わった際に変化を示す値を出力する変数の宣言
+            let FINISH_ROADING = 0;
+            //ファイルの取得をして結果を word、meanに代入する関数を作成
+            async function fetchAndProcessFiles() {
+                DIV_ROAD.innerHTML='ファイルの取得を開始しました。';
+                try {
+                    //txtファイルの取得
+                    const [RES_WORD,RES_MEAN]=await Promise.all([
+                        fetch(URL_WORD),
+                        fetch(URL_MEAN)
+                    ]);
+                    //エラーの発生がないか
+                    if (!RES_WORD.ok || !RES_MEAN.ok) {
+                        エラーの発生があった場合
+                        const STATUS_WORD =RES_WORD.status
+                        const STATUS_MEAN =RES_MEAN.status
+                        throw new Error(`ファイルの読み込みに失敗しました。HTTPエラー: Word=${STATUS_WORD}, Mean=${STATUS_MEAN}`);
+                    }
+                    //ファイルの内容を抽出
+                    const [TXT_WORD,TXT_MEAN] = await Promise.all([
+                        RES_WORD.text(),
+                        RES_WORD.text()
+                    ]);
+                    //ファイルの整理
+                    const wordArray = TXT_WORD
+                    .split('\n')
+                    .map(line=>line.trim())
+                    .filter(line=>line.length>0)
+                    const meanArray = TXT_MEAN
+                    .split('\n')
+                    .map(line=>line.trim())
+                    .filter(line=>line.length>0)
+                } catch (error) {
+                    //エラーの発生
+                    FINISH_ROADING=2;
+                    const errorMessage = `❌ エラーが発生しました: ${error.message}`;
+                    DIV_ROAD.innerHTML=errorMessage;
+                };
+            }
+        </script>
+    </body>
+</html>
