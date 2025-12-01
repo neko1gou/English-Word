@@ -1952,7 +1952,7 @@ studio
 study
 subject
 such
-… such as
+... such as
 sudden
 suddenly
 summer
