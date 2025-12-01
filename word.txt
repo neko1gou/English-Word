@@ -8,7 +8,7 @@ be about to
 abroad
 accept
 accessible
-accessoly
+accessory
 according
 action
 active
@@ -23,7 +23,7 @@ adjustable
 adult
 advantage
 take advantage of
-advanture
+adventure
 advice
 Afghanistan
 afraid
@@ -384,7 +384,7 @@ clothing
 cloud
 cloudless
 cloudy
-culb
+club
 coal
 coat
 coffee
@@ -536,8 +536,8 @@ do
 do
 doctor
 dodgeball
-dose
-dose
+does
+does
 dog
 dollar
 Doll's Festival
@@ -864,7 +864,7 @@ greatly
 green
 green tea
 ground
-groupe
+group
 grow
 grow
 guest
