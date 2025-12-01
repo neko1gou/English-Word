@@ -179,6 +179,10 @@ beat
 beautiful
 beauty
 became
+because
+because of
+become
+become
 bed
 go to bed
 beef
@@ -222,7 +226,7 @@ book
 bookstore
 border
 bored
-be bron
+be born
 borrow
 both
 bother
@@ -268,7 +272,7 @@ by
 by
 by
 little by little
-cabbege
+cabbage
 cafe
 cake
 call
@@ -295,7 +299,7 @@ cannot
 cap
 car
 card
-car
+care
 take care of
 career
 careful
@@ -426,7 +430,7 @@ contact
 content
 contest
 continue
-contol
+control
 convenience
 convenient
 cook
@@ -783,7 +787,7 @@ from
 from
 from
 front
-in frot of
+in front of
 fruit
 full
 full
