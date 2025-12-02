@@ -96,7 +96,7 @@
                 document.getElementById('end').textContent = alphabetList[endId]
             }
             fetchAndProcessFiles();
-            document.getElementById('start').onsubmit = function() {
+            document.getElementById('start').onsubmit.onclick = function() {
                 if (startId >21){
                     startId =0
                 }else{
@@ -108,7 +108,7 @@
                 document.getElementById('start').textContent = alphabetList[startId]
                 document.getElementById('end').textContent = alphabetList[endId]
             }
-            document.getElementById('end').onsubmit = function() {
+            document.getElementById('end').onclick = function() {
                 if (endId > 21) {
                     endId=0
                     startId =0
