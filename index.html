@@ -68,6 +68,7 @@
                     word = wordArray;
                     mean = meanArray;
                     FINISH_ROADING = 1;
+                    setTimeout(load,5000)
                 } catch (error) {
                     //エラーの発生
                     FINISH_ROADING=2;
@@ -78,12 +79,12 @@
             function load() {
                 DIV_ROAD.innerHTML=`
                 <h1>
-                    <span class = 'start'></span>の初めから<span class = 'end'></span>の終わり
+                    <span id = 'start'></span>の初めから<span id = 'end'></span>の終わり
                 </h1>
                 <h1>
                     ファイルを読み込む
                 </h1>
-                <button class ='button'>
+                <button id ='button'>
                     スタート
                 </button>
                 `
@@ -91,9 +92,6 @@
                 document.getElementById('end').textContent = alphabetList[endId]
             }
             fetchAndProcessFiles();
-            while (FINISH_ROADING > 0) {
-            }
-            setTimeout(load,5000)
         </script>
     </body>
 </html>
