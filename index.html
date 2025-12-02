@@ -44,7 +44,7 @@
                     //ファイルの内容を抽出
                     const [TXT_WORD,TXT_MEAN] = await Promise.all([
                         RES_WORD.text(),
-                        RES_WORD.text()
+                        RES_MEAN.text()
                     ]);
                     //ファイルの整理
                     const wordArray = TXT_WORD
