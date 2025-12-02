@@ -24,8 +24,11 @@
             const URL_MEAN = 'https://raw.githubusercontent.com/neko1gou/English-Word/refs/heads/main/mean.txt';
             //divに変更を与えるための定数
             const DIV_ROAD = document.getElementById('run');
-            let startId = 'A'
-            let endId = 'Z'
+            let startId = 0
+            let endId = 24
+            let alphabetList = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','Y','Z']
+            let startNum = [1,149,275,478,568,660,804,880,1000,1078,1096,1118,1215,1324,1395,1478,1609,1617,1721,1989,2178,2208,2230,2362,2379]
+            let endNum =[148,274,477,567,659,803,879,999,1077,1095,1117,1214,1323,1394,1477,1608,1616,1720,1988,2177,2207,2229,2361,2378,2382]
             //ward、 meanの格納の配列の宣言
             let word =[];
             let mean =[];
@@ -84,8 +87,8 @@
                     スタート
                 </button>
                 `
-                document.getElementById('start').textContent = startId
-                document.getElementById('end').textContent =endId
+                document.getElementById('start').textContent = alphabetList[startId]
+                document.getElementById('end').textContent = alphabetList[endId]
             }
             fetchAndProcessFiles();
             while (FINISH_ROADING > 0) {
