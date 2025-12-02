@@ -55,7 +55,7 @@
                     .split('\n')
                     .map(line=>line.trim())
                     .filter(line=>line.length>0);
-                    DIV_ROAD.innerHTML = '読み込みが完了。プログラムを開始します。';
+                    DIV_ROAD.innerHTML = '読み込みが完了。5秒後、プログラムを開始します。';
                     word = wordArray;
                     mean = meanArray;
                     FINISH_ROADING = 1;
@@ -66,7 +66,23 @@
                     DIV_ROAD.innerHTML=errorMessage;
                 };
             }
+            function load() {
+                DIV_ROAD.innerHTML=`
+                <h1>
+                    <span class = 'start'></span>の初めから<span class = 'end'></span>の終わり
+                </h1>
+                <h1>
+                    ファイルを読み込む
+                </h1>
+                <button class ='button'>
+                    スタート
+                </button>
+                `
+            }
             fetchAndProcessFiles();
+            while (FINISH_ROADING > 0) {
+            }
+            setTimeout(load,5000)
         </script>
     </body>
 </html>
