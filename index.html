@@ -105,6 +105,8 @@
                         endId =startId
                     }
                 }
+                document.getElementById('start').textContent = alphabetList[startId]
+                document.getElementById('end').textContent = alphabetList[endId]
             }
             document.getElementById('end').onsubmit = function() {
                 if (endId > 21) {
@@ -113,6 +115,8 @@
                 } else {
                     endId += 1
                 }
+                document.getElementById('start').textContent = alphabetList[startId]
+                document.getElementById('end').textContent = alphabetList[endId]
             }
         </script>
     </body>
