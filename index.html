@@ -24,6 +24,8 @@
             const URL_MEAN = 'https://raw.githubusercontent.com/neko1gou/English-Word/refs/heads/main/mean.txt';
             //divに変更を与えるための定数
             const DIV_ROAD = document.getElementById('run');
+            let startId = 'A'
+            let endId = 'Z'
             //ward、 meanの格納の配列の宣言
             let word =[];
             let mean =[];
@@ -82,6 +84,8 @@
                     スタート
                 </button>
                 `
+                document.getElementById('start').textContent = startId
+                document.getElementById('end').textContent =endId
             }
             fetchAndProcessFiles();
             while (FINISH_ROADING > 0) {
