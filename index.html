@@ -55,6 +55,10 @@
                     .split('\n')
                     .map(line=>line.trim())
                     .filter(line=>line.length>0)
+                    DIV_ROAD.innerHTML = '読み込みが完了';
+                    word = wordArray;
+                    mean = meanArray;
+                    FINISH_ROADING = 1
                 } catch (error) {
                     //エラーの発生
                     FINISH_ROADING=2;
@@ -62,6 +66,7 @@
                     DIV_ROAD.innerHTML=errorMessage;
                 };
             }
+            fetchAndProcessFiles();
         </script>
     </body>
 </html>
