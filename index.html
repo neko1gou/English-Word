@@ -82,48 +82,52 @@
                 };
             }
             function load() {
-                DIV_ROAD.innerHTML=`
-                <h1>
-                    <span id = 'start'></span>の初めから<span id = 'end'></span>の終わり
-                </h1>
-                <h2 id = 'wordcount'>
-                </h2>
-                <h3>
+                if (FINISH_ROADING == 0) {
+                     DIV_ROAD.innerHTML=`
+                    <h1>
+                        <span id = 'start'></span>の初めから<span id = 'end'></span>の終わり
+                    </h1>
+                    <h2 id = 'wordcount'>
+                    </h2>
+                    <h3>
                     ファイルを読み込む
-                </h3>
-                <button id ='button'>
+                    </h3>
+                    <button id ='button'>
                     スタート
-                </button>
-                `
-                document.getElementById('start').textContent = alphabetList[startId]
-                document.getElementById('end').textContent = alphabetList[endId]
-                document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
-                document.getElementById('start').onclick = function() {
-                if (startId >23){
-                    startId =0
-                }else{
-                    startId +=1
-                    if(endId < startId){
-                        endId =startId
+                    </button>
+                    `
+                    document.getElementById('start').textContent = alphabetList[startId]
+                    document.getElementById('end').textContent = alphabetList[endId]
+                    document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
+                    document.getElementById('start').onclick = function() {
+                        if (startId >23){
+                            startId =0
+                        }else{
+                            startId +=1
+                            if(endId < startId){
+                                endId =startId
+                            }
+                        }
+                        wardCount = String( endNum[endId] - startNum[startId]+1)
+                        document.getElementById('start').textContent = alphabetList[startId]
+                        document.getElementById('end').textContent = alphabetList[endId]
+                        document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
                     }
+                    document.getElementById('end').onclick = function() {
+                        if (endId > 23) {
+                            endId=0
+                            startId =0
+                        } else {
+                            endId += 1
+                        }
+                        wardCount = String( endNum[endId] - startNum[startId]+1)
+                        document.getElementById('start').textContent = alphabetList[startId]
+                        document.getElementById('end').textContent = alphabetList[endId]
+                        document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
+                    }
+                }else{
+                    location.reload()
                 }
-                wardCount = String( endNum[endId] - startNum[startId]+1)
-                document.getElementById('start').textContent = alphabetList[startId]
-                document.getElementById('end').textContent = alphabetList[endId]
-                document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
-            }
-            document.getElementById('end').onclick = function() {
-                if (endId > 23) {
-                    endId=0
-                    startId =0
-                } else {
-                    endId += 1
-                }
-                wardCount = String( endNum[endId] - startNum[startId]+1)
-                document.getElementById('start').textContent = alphabetList[startId]
-                document.getElementById('end').textContent = alphabetList[endId]
-                document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
-            }
             }
             fetchAndProcessFiles();
         </script>
