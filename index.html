@@ -179,6 +179,7 @@
                         wordNum.push(i);
                     }
                 }
+                missWord = [];
                 let random = Math.floor(Math.random()*wordNum.length)
                 let anser = word[wordNum[random]]
                 let userAnser = ''
@@ -223,6 +224,22 @@
                 };
             }
             function result() {
+                const missWordLines = missWord.map(index => index + 1).join('\n');
+                const blob = new Blob([missWordLines], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                DIV_ROAD.innerHTML = `
+                <h1>✅ テスト終了</h1>
+                <p>単語学習のテストが終了しました。</p>
+                <p id='misscount'></p>
+                <p>間違えた単語の行番号リストをダウンロードしますか？</p>
+                <a id="downloadLink" href="${url}" download="missed_words.txt">
+                    間違えた単語リストをダウンロード (missed_words.txt)
+                </a>
+                <br><br>
+                <button onclick="load()">もう一度最初から</button>
+                `;
+                document.getElementById('misscount').textContent=`あなたは${missWord.length}問間違えました。
+                正答率は${missWord.length/wordCount*100}%でした`
             }
             fetchAndProcessFiles();
         </script>
