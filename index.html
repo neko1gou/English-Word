@@ -77,8 +77,9 @@
                 } catch (error) {
                     //エラーの発生
                     FINISH_ROADING=2;
-                    const errorMessage = `❌ エラーが発生しました: ${error.message}`;
+                    const errorMessage = `❌ エラーが発生しました: ${error.message}5秒後に再読み込みします。`;
                     DIV_ROAD.innerHTML=errorMessage;
+                    setTimeout(load,5000)
                 };
             }
             function load() {
