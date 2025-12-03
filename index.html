@@ -36,6 +36,7 @@
             //ward、 meanの格納の配列の宣言
             let word =[];
             let mean =[];
+            let wardCount = String( endNum[endId] - startNum[startId]+1)
             //ファイルの読み込みが終わった際に変化を示す値を出力する変数の宣言
             let FINISH_ROADING = 0;
             //ファイルの取得をして結果を word、meanに代入する関数を作成
@@ -85,9 +86,11 @@
                 <h1>
                     <span id = 'start'></span>の初めから<span id = 'end'></span>の終わり
                 </h1>
-                <h1>
+                <h2 id = 'wordcount'>
+                </h2>
+                <h3>
                     ファイルを読み込む
-                </h1>
+                </h3>
                 <button id ='button'>
                     スタート
                 </button>
@@ -95,7 +98,7 @@
                 document.getElementById('start').textContent = alphabetList[startId]
                 document.getElementById('end').textContent = alphabetList[endId]
                 document.getElementById('start').onclick = function() {
-                if (startId >21){
+                if (startId >24){
                     startId =0
                 }else{
                     startId +=1
@@ -105,9 +108,10 @@
                 }
                 document.getElementById('start').textContent = alphabetList[startId]
                 document.getElementById('end').textContent = alphabetList[endId]
+                document.getElementById('wordcount').textContent = wardCount
             }
             document.getElementById('end').onclick = function() {
-                if (endId > 21) {
+                if (endId > 24) {
                     endId=0
                     startId =0
                 } else {
