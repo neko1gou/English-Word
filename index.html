@@ -192,7 +192,7 @@
                     <input type='submit' id='next' value='答える'>
                 </form>
                 `
-                documet.getElementById('question').textContent= mean[wordNum[random]];
+                document.getElementById('question').textContent= mean[wordNum[random]];
                 document.getElementById('form').onsubmit = function(event){
                     event.preventDefault();
                     if (nextOrAnser == 0) {
