@@ -144,9 +144,9 @@
                 }
             }
             function missAns() {
-                const missFileImput = document.getElementById('missFile')
+                const missFileInput = document.getElementById('missFile')
                 const missFile = missFileInput.files[0];
-                if (!errorFile) {
+                if (!missFile) {
                     load();
                     return;
                 };
