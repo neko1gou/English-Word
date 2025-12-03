@@ -166,12 +166,13 @@
                     wordNum = misslines.map(line => line - 1);
                     startQuestion()
                 }
+                reader.readAsText(missFile);
             }
             function startQuestion () {
                 //問題出題
                 if (wordNum.length == 0) {
-                    let numStart = startNum[startId-1]
-                    let numEnd = endNum[endId-1]
+                    let numStart = startNum[startId]-1
+                    let numEnd = endNum[endId]-1
                     for (let i = numStart; i <= numEnd; i++) {
                         wordNum.push(i);
                     }
