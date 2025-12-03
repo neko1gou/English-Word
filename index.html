@@ -35,6 +35,8 @@
             let startNum = [1,149,275,478,568,660,804,880,1000,1078,1096,1118,1215,1324,1395,1478,1609,1617,1721,1989,2178,2208,2230,2362,2379]
             let endNum =[148,274,477,567,659,803,879,999,1077,1095,1117,1214,1323,1394,1477,1608,1616,1720,1988,2177,2207,2229,2361,2378,2382]
             let wordNum = []
+            //間違えた単語の列を格納する
+            let missWord =[]
             //ward、 meanの格納の配列の宣言
             let word =[];
             let mean =[];
@@ -177,6 +179,11 @@
                         wordNum.push(i);
                     }
                 }
+                let random = Math.floor(Math.random()*wordNum.length)
+                let anser = word[wordNum[random]]
+                let userAnser = ''
+                let nextOrAnser = 0
+                let voice = new SpeechSynthesisUtterance(anser);
                 DIV_ROAD.innerHTML=`
                 <h1 id ='question'></h1>
                 <form action='#' id='form'>
@@ -185,6 +192,36 @@
                     <input type='submit' value='答える'>
                 </form>
                 `
+                documet.getElementById('question').textContent= mean[wordNum[random]];
+                document.getElementById('form').onsubmit = function(event){
+                    event.preventDefault();
+                    if (nextOrAnser == 0) {
+                        nextOrAnser = 1
+                        document.getElementById('next').value = '次へ'
+                        userAnser = document.getElementById('form').ans.value
+                        documet.getElementById('form').ans.value = ''
+                        if (userAnser == anser){
+                            document.getElementById('question').textContent = '正解'
+                        }else{
+                            document.getElementById('question').textContent = `不正解${anser}`
+                            missWord.push(wordNum[random])
+                        }
+                        wordNum.splice(random,1)
+                        voice = new SpeechSynthesisUtterance(anser);
+                        voice.lang = 'en-US';
+                        speechSynthesis.speak(voice);
+                    }else if (wordNum.length !== 0){
+                        nextOrAnser = 0
+                        document.getElementById('next').value = '答える'
+                        random = Math.floor(Math.random()* wordNum.length)
+                        anser = word[wordNum[random]]
+                        document.getElementById('question').textContent=mean[wordNum[random]]
+                    }else {
+                        result()
+                    }
+                };
+            }
+            function result() {
             }
             fetchAndProcessFiles();
         </script>
