@@ -138,7 +138,31 @@
                 }
             }
             function missAns() {
-                
+                const missFileImput = document.getElementById('missFile')
+                const missFile = missFileInput.files[0];
+                if (!errorFile) {
+                    load();
+                    return;
+                };
+                if (FINISH_ROADING !== 1) {
+                    load();
+                    return;
+                };
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const TXT_MISS = e.target.result;
+                    const misslines = TXT_MISS
+                    .split(/[\n,]/) 
+                    .map(line => parseInt(line.trim()))
+                    .filter(num => !isNaN(num) && num > 0)
+                    .filter((num, index, self) => self.indexOf(num) === index)
+                    .sort((a, b) => a - b);
+                    wordNum = misslines.map(line => line - 1);
+                    startQuestion()
+                }
+            }
+            function startQuestion () {
+                //問題出題
             }
             fetchAndProcessFiles();
         </script>
