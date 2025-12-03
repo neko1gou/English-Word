@@ -106,7 +106,7 @@
                     `
                     document.getElementById('start').textContent = alphabetList[startId]
                     document.getElementById('end').textContent = alphabetList[endId]
-                    document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
+                    document.getElementById('wordcount').textContent = '単語数:'+wordCount+'単語'
                     document.getElementById('start').onclick = function() {
                         if (startId >23){
                             startId =0
@@ -119,7 +119,7 @@
                         wordCount = String( endNum[endId] - startNum[startId]+1)
                         document.getElementById('start').textContent = alphabetList[startId]
                         document.getElementById('end').textContent = alphabetList[endId]
-                        document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
+                        document.getElementById('wordcount').textContent = '単語数:'+wordCount+'単語'
                     }
                     document.getElementById('end').onclick = function() {
                         if (endId > 23) {
@@ -131,7 +131,7 @@
                         wordCount = String( endNum[endId] - startNum[startId]+1)
                         document.getElementById('start').textContent = alphabetList[startId]
                         document.getElementById('end').textContent = alphabetList[endId]
-                        document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
+                        document.getElementById('wordcount').textContent = '単語数:'+wordCount+'単語'
                     }
                 }else{
                     location.reload()
