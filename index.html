@@ -170,10 +170,10 @@
             function startQuestion () {
                 //問題出題
                 if (wordNum.length == 0) {
-                    let i = startNum[startId]-1
-                    while(i >= int(wordCount)){
-                        wordNum.push(i)
-                        i +=1
+                    let numStart = startNum[startId-1]
+                    let numEnd = endNum[endId-1]
+                    for (let i = numStart; i <= numEnd; i++) {
+                        wordNum.push(i);
                     }
                 }
                 DIV_ROAD.innerHTML=`
