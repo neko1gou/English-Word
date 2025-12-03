@@ -38,7 +38,7 @@
             //ward、 meanの格納の配列の宣言
             let word =[];
             let mean =[];
-            let wardCount = String( endNum[endId] - startNum[startId]+1)
+            let wordCount = String( endNum[endId] - startNum[startId]+1)
             //ファイルの読み込みが終わった際に変化を示す値を出力する変数の宣言
             let FINISH_ROADING = 0;
             //ファイルの取得をして結果を word、meanに代入する関数を作成
@@ -116,7 +116,7 @@
                                 endId =startId
                             }
                         }
-                        wardCount = String( endNum[endId] - startNum[startId]+1)
+                        wordCount = String( endNum[endId] - startNum[startId]+1)
                         document.getElementById('start').textContent = alphabetList[startId]
                         document.getElementById('end').textContent = alphabetList[endId]
                         document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
@@ -128,7 +128,7 @@
                         } else {
                             endId += 1
                         }
-                        wardCount = String( endNum[endId] - startNum[startId]+1)
+                        wordCount = String( endNum[endId] - startNum[startId]+1)
                         document.getElementById('start').textContent = alphabetList[startId]
                         document.getElementById('end').textContent = alphabetList[endId]
                         document.getElementById('wordcount').textContent = '単語数:'+wardCount+'単語'
@@ -166,6 +166,21 @@
             }
             function startQuestion () {
                 //問題出題
+                if (wordNum.length == 0) {
+                    let i = startNum[startId]-1
+                    while(i >= wordCount){
+                        wordNum.push(i)
+                        i +=1
+                    }
+                }
+                DIV_ROAD.innerHTML=`
+                <h1 id ='question'></h1>
+                <form action='#' id='form'>
+                    <input type='text' name='ans'>
+                    <br>
+                    <input type='submit' value='答える'>
+                </form>
+                `
             }
             fetchAndProcessFiles();
         </script>
