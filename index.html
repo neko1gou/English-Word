@@ -191,8 +191,10 @@
                     <input type='text' name='ans'>
                     <br>
                     <input type='submit' id='next' value='答える'>
+                    <h3 class = 'wordcount'></h3>
                 </form>
                 `
+                document.getElementsById('wordcount').textContent = `あと${wordNum.length}単語`
                 document.getElementById('question').textContent= mean[wordNum[random]];
                 document.getElementById('form').onsubmit = function(event){
                     event.preventDefault();
