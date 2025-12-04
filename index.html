@@ -195,7 +195,7 @@
                     <h3 id = 'wordcount'></h3>
                 </form>
                 `
-                document.getElementsById('wordcount').textContent = `あと${wordNum.length}単語`
+                document.getElementById('wordcount').textContent = `あと${wordNum.length}単語`
                 document.getElementById('question').textContent= mean[wordNum[random]];
                 document.getElementById('form').onsubmit = function(event){
                     event.preventDefault();
@@ -211,7 +211,7 @@
                             missWord.push(wordNum[random])
                         }
                         wordNum.splice(random,1)
-                        document.getElementsById('wordcount').textContent = `あと${wordNum.length}単語`
+                        document.getElementById('wordcount').textContent = `あと${wordNum.length}単語`
                         voice = new SpeechSynthesisUtterance(anser);
                         voice.lang = 'en-US';
                         speechSynthesis.speak(voice);
