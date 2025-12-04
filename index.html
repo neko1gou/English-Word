@@ -243,7 +243,7 @@
                 <button onclick="load()">もう一度最初から</button>
                 `;
                 document.getElementById('misscount').textContent=`あなたは${missWord.length}問間違えました。
-                正答率は${(wordGet-missWord.length)/wordCount*100}%でした`
+                正答率は${(wordGet-missWord.length)/wordGet*100}%でした`
             }
             fetchAndProcessFiles();
         </script>
