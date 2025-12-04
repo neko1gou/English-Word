@@ -169,7 +169,6 @@
                     startQuestion()
                 }
                 reader.readAsText(missFile);
-                wordCount = wordNum.length
             }
             function startQuestion () {
                 //問題出題
@@ -180,6 +179,7 @@
                         wordNum.push(i);
                     }
                 }
+                wordGet = wordNum.length
                 missWord = [];
                 let random = Math.floor(Math.random()*wordNum.length)
                 let anser = word[wordNum[random]]
@@ -243,7 +243,7 @@
                 <button onclick="load()">もう一度最初から</button>
                 `;
                 document.getElementById('misscount').textContent=`あなたは${missWord.length}問間違えました。
-                正答率は${(wordCount-missWord.length)/wordCount*100}%でした`
+                正答率は${(wordGet-missWord.length)/wordCount*100}%でした`
             }
             fetchAndProcessFiles();
         </script>
