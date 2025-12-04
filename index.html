@@ -169,6 +169,7 @@
                     startQuestion()
                 }
                 reader.readAsText(missFile);
+                wordCount = wordNum.length
             }
             function startQuestion () {
                 //問題出題
@@ -210,6 +211,7 @@
                             missWord.push(wordNum[random])
                         }
                         wordNum.splice(random,1)
+                        document.getElementsById('wordcount').textContent = `あと${wordNum.length}単語`
                         voice = new SpeechSynthesisUtterance(anser);
                         voice.lang = 'en-US';
                         speechSynthesis.speak(voice);
